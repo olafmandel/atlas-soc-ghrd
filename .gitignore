@@ -9,3 +9,6 @@
 /ang_sstate_cache/
 /downloads/
 /setup-scripts/
+
+# scripts/atlas_sd_card_image_creation.sh (integration):
+/atlas_sdcard_*.img
