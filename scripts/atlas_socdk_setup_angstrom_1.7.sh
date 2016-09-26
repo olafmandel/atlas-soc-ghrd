@@ -60,10 +60,13 @@ find setup-scripts/sources -name \*.bb -o -name \*.bbappend -print0 |\
 # Patch build to silence errors & warnings
 cat <<"EOF" >>setup-scripts/conf/local.conf
 
-# Silence some warnings
+# Silence some warnings, skip non-compilable package
 DEPENDS_append_pn-gvfs                      = " gtk+3"
 DEPENDS_append_pn-imagemagick               = " libxt"
 FILES_gvfs_append_pn-gvfs                   = " ${datadir}/bash-completion"
+IMAGE_INSTALL_remove_pn-atlas-soc-image     = "atlas-soc-fftsw-apps"
+IMAGE_INSTALL_remove_pn-atlas-soc-image     = "atlas-soc-fftsw-apps-init"
+IMAGE_INSTALL_remove_pn-atlas-soc-image     = "atlas-soc-fftsw-apps-src"
 PREFERRED_PROVIDER_glibc                    = "glibc"
 PREFERRED_PROVIDER_libevent                 = "libevent"
 PREFERRED_PROVIDER_python-distribute-native = "python-distribute-native"
